@@ -4,17 +4,17 @@ Open source digital currency, foreign exchange, stock trading system, support a 
 
 # List of functions:
 
-- 1. Support multiple trading strategies: contract, leverage, spot, and risk hedging (single-shot trading mode)
-- 2. Rich open interfaces, convenient and fast access to mainstream payment systems and rapid development of business promotion activities
-- 3. Multiple client support (H5, PC, APP), rich market icons, multiple indicators
-- 4. Powerful background management, support the main white label mode, and realize the simultaneous development of multiple business modes
-- 5. Flexible parameter configuration capabilities, various transaction parameter configurations take effect in real time
-- 6. Stable market structure, supporting mutual backup of multiple sources (coinapi, binance, ib, ig, longbridge, etc.)
+- Support multiple trading strategies: contract, leverage, spot, and risk hedging (single-shot trading mode)
+- Rich open interfaces, convenient and fast access to mainstream payment systems and rapid development of business promotion activities
+- Multiple client support (H5, PC, APP), rich market icons, multiple indicators
+- Powerful background management, support the main white label mode, and realize the simultaneous development of multiple business modes
+- Flexible parameter configuration capabilities, various transaction parameter configurations take effect in real time
+- Stable market structure, supporting mutual backup of multiple sources (coinapi, binance, ib, ig, longbridge, etc.)
 
 
 # Features:
-- 1. Client
-- 2. Management background
+- Client
+- Management background
 
 # Main technique:
 
