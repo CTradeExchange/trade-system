@@ -1,5 +1,5 @@
 <p align="center">
-<a href="https://ctradeex.io/"><img src="docs/images/ctradeex-icon.png" alt="banner" width="200px"></a>
+<a href="https://ctradeex.io/"><img src="docs/images/ctradeex-icon.jpg" alt="banner" width="200px"></a>
 </p>
 
 <p align="center">
