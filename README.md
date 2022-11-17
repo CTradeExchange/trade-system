@@ -42,7 +42,51 @@ Open source digital currency, foreign exchange, stock trading system, support a 
 
 # Features:
 - Client
+<table>
+  <tr>
+     <td><img src="docs/images/client/en/client-1.png"/></td>
+     <td><img src="docs/images/client/en/client-2.png"/></td>
+	 <td><img src="docs/images/client/en/client-3.png"/></td>
+     <td><img src="docs/images/client/en/client-4.png"/></td>
+  </tr>
+  <tr>
+     <td><img src="docs/images/client/en/client-5.png"/></td>
+     <td><img src="docs/images/client/en/client-6.png"/></td>
+	 <td><img src="docs/images/client/en/client-7.png"/></td>
+     <td><img src="docs/images/client/en/client-8.png"/></td>
+  </tr>
+  <tr>
+     <td><img src="docs/images/client/en/client-9.png"/></td>
+     <td></td>
+	 <td></td>
+     <td></td>
+  </tr>
+</table>
+
 - Management background
+
+<table>
+  <tr>
+     <td><img src="docs/images/admin/en/admin-1.png"/></td>
+     <td><img src="docs/images/admin/en/admin-2.png"/></td>
+  </tr>
+  <tr>
+	 <td><img src="docs/images/admin/en/admin-3.png"/></td>
+     <td><img src="docs/images/admin/en/admin-4.png"/></td>
+  </tr>
+  <tr>
+     <td><img src="docs/images/admin/en/admin-5.png"/></td>
+     <td><img src="docs/images/admin/en/admin-6.png"/></td>
+  </tr>
+  <tr>
+	 <td><img src="docs/images/admin/en/admin-7.png"/></td>
+     <td><img src="docs/images/admin/en/admin-8.png"/></td>
+  </tr>
+  <tr>
+     <td><img src="docs/images/admin/en/admin-9.png"/></td>
+     <td></td>
+  </tr>
+</table>
 
 # Main technique:
 
@@ -80,12 +124,85 @@ Open source digital currency, foreign exchange, stock trading system, support a 
 
 
 # Service definition:
-Service Description
+
+<details>
+  <summary><b>🕸 Trade Api/Trading Interface</b></summary>
+  After receiving the request, perform static risk control and pre-buy orders based on configuration parameters such as product, account, and authority. After the delayed transaction order is sent to PBO successfully, it will be returned to the customer, and the price adjustment order will be bound to the parameters used for settlement after passing the static risk control Put the request in the correct MQ. If it is a read-only query request, directly request clearing.
+  </details>
+
+<details>
+  <summary><b>🔗PreBuried Order(PBO)/Pre-Buried Order</b></summary>
+  Provide an interface to query the user's pending order. If the price or time is triggered, it will request back to the Trade Api to continue at the market price. There is no need to freeze in this module, generate pre-paid orders, maintain order status, and generate delayed transaction orders to maintain order status
+
+  </details>
+
+<details>
+  <summary><b>🤖 Trade/Trading Services</b></summary>
+  It is processed one by one according to the request order of a single user. There are only market orders here. First, the price risk control of the real-time market is followed, and then the freeze is performed, and the freeze is 20% more (configurable). After the freeze is successful, an order is generated, and the confirmed order is sent to clearing. After clearing is received, it returns to the client successfully. All positions are closed first, and the position is frozen. If the freezing is successful, the client will be returned successfully. When receiving a liquidation request, you need to cancel the prepaid order and delayed order.
+  </details>
+
+<details>
+  <summary><b>🔎 Order/order service</b></summary>
+  Insert a new order, update the order, and provide an order list query interface.
+  </details>
+
+<details>
+  <summary><b>🧩 Clearing/clearing settlement service</b></summary>
+  Execute matching orders, generate positions, provide floating profit and loss interface (real-time calculation), provide account basic information interface (Account), provide account real-time information interface (real-time calculation + Account), deposit and withdrawal request processing (fund management service direct call) , Various types of forced liquidation, overnight interest collection, position change account change notification (to be discussed), fund freezing interface, and position freezing interface.
+  </details>
+
+<details>
+  <summary><b>💻 Postion/position service</b></summary>
+  Insert new position, update position, broadcast position data, position list interface, freeze position interface</a>.
+  </details>
+
+<details>
+  <summary><b>💡Account/Account Services</b></summary>
+  Bookkeeping, reconciliation, account opening, account cancellation, freezing, account basic information interface</a>.
+  </details>
+
+<details>
+  <summary><b>📊 Real Time Calculate(RTC)/Real Time Calculation Service</b></summary>
+  Margin calculation, send orders to CFD Trade for liquidation, take profit and stop loss to close positions, and send orders to CFD Trade, providing floating profit and loss interface
+  </details>
+
+<details>
+  <summary><b>🗃 Settlement/Product interest settlement service</b></summary>
+  When the product expires, send an order to Trade, and when the settlement time arrives, send an order to clearing
+  </details>
+
+<details>
+  <summary><b>🏘 Config Service/parameter configuration service</b></summary>
+  Configure product data, account group data, be responsible for persistence, and provide broadcast synchronization update of configuration information, etc. Other services that need to use configuration information subscribe to this service. The design diagram is in another picture "Basic Data Design Diagram"
+
+  </details>
+
+<details>
+  <summary><b>🧠Customer Service/Account Opening KYC Service</b></summary>
+  Customer account opening, authorization verification, KYC certification configuration, and KYC data core services; provide KYC certification parameter configuration and customer data review functions; and provide basic customer data query and data export functions.
+  </details>
+  
+
+<details>
+  <summary><b>🔎 Fund Service/Deposit and withdrawal service</b></summary>
+  Core services such as customer fund inquiry, recharge and deposit, and withdrawal proposal; responsible for payment gateway access, configuration of different payment methods, and basic payment parameter settings; at the same time, it provides functions such as inquiry of deposit and withdrawal records and data export.
+  </details>
+
+<details>
+  <summary><b>🧩 Meaasge Service/Message Center Service</b></summary>
+  Responsible for the external sending interface of internal messages, SMS, Email and other messages
+  </details>
+
+<details>
+  <summary><b>💻Admin Service/Platform Management Service</b></summary>
+  SAAS background management, users set product permissions and game configuration, SMS, Email, payment and other related basic configuration functions; provide white label companies, and assign white label permission levels; white labels can configure their own product parameters and manage their own customers Data, such as data and transaction processes.
+  </details>
 
 
 
 # Overall structure:
-texture map
+
+![design diagram](docs/images/design/en/1.png)
 
 
 
