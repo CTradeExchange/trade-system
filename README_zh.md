@@ -41,6 +41,25 @@
 
 # 功能介绍：
 - 1、客户端
+<table>
+  <tr>
+      <td width="50%" align="center"><b>工作台</b></td>
+      <td width="50%" align="center"><b>项目资源</b></td>
+  </tr>
+  <tr>
+     <td><img src="docs/images/console.png"/></td>
+     <td><img src="docs/images/project.png"/></td>
+  </tr>
+  <tr>
+      <td width="50%" align="center"><b>CI/CD 流水线</b></td>
+      <td width="50%" align="center"><b>应用商店</b></td>
+  </tr>
+  <tr>
+     <td><img src="docs/images/cicd.png"/></td>
+     <td><img src="docs/images/app-store.png"/></td>
+  </tr>
+</table>
+
 - 2、管理后台
 
 # 主要技术：
