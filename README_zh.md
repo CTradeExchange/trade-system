@@ -1,4 +1,26 @@
+<p align="center">
+<a href="https://ctradeex.io/"><img src="docs/images/ctradeex-icon.jpg" alt="banner" width="200px"></a>
+</p>
+
+<p align="center">
+<b> CtradeExchange <i>digital currency, foreign exchange, stock trading , spot matching</i></b>
+</p>
+
+<p align=center>
+<a href="https://goreportcard.com/report/github.com/CTradeExchange/trade-system"><img src="https://goreportcard.com/badge/github.com/CTradeExchange/trade-system" alt="A+"></a>
+<a href="https://hub.docker.com/r/kubesphere/ks-installer"><img src="https://img.shields.io/docker/pulls/kubesphere/ks-installer"></a>
+<a href="https://github.com/search?q=user%3Akubesphere+user%3Akubesphere-sigs+label%3A%22good+first+issue%22+state%3Aopen&type=Issues&ref=advsearch&l=&l="><img src="https://img.shields.io/github/issues/badges/shields/good%20first%20issue" alt="good first"></a>
+<a href="https://twitter.com/intent/follow?screen_name=KubeSphere"><img src="https://img.shields.io/twitter/follow/KubeSphere?style=social" alt="follow on Twitter"></a>
+<a href="https://join.slack.com/t/kubesphere/shared_invite/enQtNTE3MDIxNzUxNzQ0LTZkNTdkYWNiYTVkMTM5ZThhODY1MjAyZmVlYWEwZmQ3ODQ1NmM1MGVkNWEzZTRhNzk0MzM5MmY4NDc3ZWVhMjE"><img src="https://img.shields.io/badge/Slack-600%2B-blueviolet?logo=slack&amp;logoColor=white"></a>
+<a href="https://www.youtube.com/channel/UCyTdUQUYjf7XLjxECx63Hpw"><img src="https://img.shields.io/youtube/channel/subscribers/UCyTdUQUYjf7XLjxECx63Hpw?style=social"></a>
+</p>
+
+
+----
+
 # 交易系统后台
+> [English](README.md) | 中文
+
 开源数字货币、外汇、股票交易系统，支持多种交易方式，现货撮合、合约全仓、合约隔离仓、杠杆现货、股票、外汇等。
 
 # 功能清单：
